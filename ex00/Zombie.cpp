@@ -1,0 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmalkawi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/08 12:58:45 by tmalkawi          #+#    #+#             */
+/*   Updated: 2025/07/08 12:58:45 by tmalkawi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Zombie.hpp"
+#include <iostream>
+
+Zombie::Zombie() { return; }
+
+Zombie::~Zombie() { return; }
+
+void Zombie::announce(void) { std::cout << "BraiiiiiiinnnzzzZ..." << '\n'; }
