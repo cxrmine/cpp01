@@ -13,7 +13,7 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie() { return; }
+Zombie::Zombie(std::string name) { Zombie::name = name; }
 
 Zombie::~Zombie() { return; }
 
