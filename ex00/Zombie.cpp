@@ -13,7 +13,13 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(std::string name) { Zombie::name = name; }
+Zombie::Zombie(std::string name) {
+  if (name.empty()) {
+    std::cout << "Error: please use a bvalid name for the zombie" << '\n';
+  }
+
+  Zombie::name = name;
+}
 
 Zombie::~Zombie() { return; }
 
