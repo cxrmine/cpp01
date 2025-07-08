@@ -12,10 +12,10 @@
 
 #include <string>
 
-class MyClass {
+class Zombie {
 public:
-  MyClass();
-  ~MyClass();
+  Zombie();
+  ~Zombie();
 
   void announce(void);
 
