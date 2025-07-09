@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 NAME=bin/zombie
-MAIN=main.cpp
-SRC=randomChump.cpp \
+SRC=main.cpp \
+	randomChump.cpp \
 	newZombie.cpp \
 	Zombie.cpp
 COMPILER=c++
