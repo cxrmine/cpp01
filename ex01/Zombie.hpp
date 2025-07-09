@@ -12,8 +12,11 @@
 
 #include <string>
 
+#define MAX_ALLOCATE_ZOMBIES 10000
+
 class Zombie {
 public:
+  Zombie() = default;
   Zombie(std::string name);
   ~Zombie();
 
@@ -23,4 +26,4 @@ private:
   std::string name;
 };
 
-Zombie* zombieHorde(int N, std::string name);
+Zombie *zombieHorde(int N, std::string name);
