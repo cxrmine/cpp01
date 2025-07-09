@@ -10,11 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=bin/zombie
+NAME=bin/zombiehorde
 SRC=main.cpp \
-	randomChump.cpp \
-	newZombie.cpp \
-	Zombie.cpp
+	zombieHorde.cpp \
+	Zombie.cpp \
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98
 OBJECTS=$(addprefix obj/, $(patsubst %.cpp, %.o, $(SRC)))
