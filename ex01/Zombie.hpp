@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+
 #include <string>
 
 #define MAX_ALLOCATE_ZOMBIES 10000
@@ -28,3 +31,5 @@ private:
 };
 
 Zombie *zombieHorde(int N, std::string name);
+
+#endif // !ZOMBIE_HPP
