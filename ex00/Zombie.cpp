@@ -24,7 +24,8 @@ Zombie::Zombie(std::string name) {
 
 Zombie::~Zombie() {
   std::cout << "[DEBUG] Zombie \"" << Zombie::name
-            << "\" has died (destroyed in c++ terms)";
+            << "\" has died (destroyed in c++ terms)"
+            << "\n";
 }
 
 void Zombie::announce(void) {
