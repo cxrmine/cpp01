@@ -16,6 +16,11 @@
 
 int main(int argc, char *argv[]) {
   std::string first_zombie = "talal";
+  std::string second_zombie = "kyllian";
+
   Zombie *zombie = newZombie(first_zombie);
+  randomChump(second_zombie);
+
+  delete zombie;
   return 0;
 }
