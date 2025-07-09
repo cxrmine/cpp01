@@ -14,7 +14,7 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char *argv[]) {
+int main() {
   std::string first_zombie = "talal";
   std::string second_zombie = "kyllian";
 
