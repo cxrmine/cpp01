@@ -19,6 +19,8 @@ int main() {
   std::string second_zombie = "kyllian";
 
   Zombie *zombie = newZombie(first_zombie);
+  zombie->announce();
+
   randomChump(second_zombie);
 
   delete zombie;
