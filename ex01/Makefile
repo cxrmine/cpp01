@@ -14,6 +14,7 @@ NAME=bin/zombiehorde
 SRC=main.cpp \
 	zombieHorde.cpp \
 	Zombie.cpp \
+
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98
 OBJECTS=$(addprefix obj/, $(patsubst %.cpp, %.o, $(SRC)))
