@@ -23,7 +23,7 @@ Zombie *zombieHorde(int N, std::string name) {
   if (zombie != NULL)
     return (NULL);
 
-  for (size_t i = 0; i < N; i++) {
+  for (int i = 0; i < N; i++) {
     zombie[i].setName(name);
   }
 
