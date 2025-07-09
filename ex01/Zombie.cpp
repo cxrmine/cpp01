@@ -15,7 +15,7 @@
 
 Zombie::Zombie(std::string name) : name(name) {
   if (name.empty()) {
-    std::cout << "Error: please use a bvalid name for the zombie" << '\n';
+    std::cout << "Error: please use a valid name for the zombie" << '\n';
     return;
   }
 }

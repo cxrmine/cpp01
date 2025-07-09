@@ -17,5 +17,15 @@
 Zombie *zombieHorde(int N, std::string name) {
   if (N <= 0 || name.empty() || N > MAX_ALLOCATE_ZOMBIES)
     return (NULL);
+
   Zombie *zombie = new Zombie[N];
+
+  if (zombie != NULL)
+    return (NULL);
+
+  for (size_t i = 0; i < N; i++) {
+    zombie[N].announce();
+  }
+
+  return zombie;
 }
