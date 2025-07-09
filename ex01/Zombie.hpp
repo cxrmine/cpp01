@@ -17,6 +17,11 @@
 
 #define MAX_ALLOCATE_ZOMBIES 10000
 
+typedef enum e_args {
+	ZOMBIE_QUANTITY,
+	ZOMBIE_NAME,
+} t_args;
+
 class Zombie {
 public:
   Zombie() = default;
