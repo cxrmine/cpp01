@@ -14,8 +14,9 @@
 #include <iostream>
 
 int main(int argc, char *argv[]) {
-  if (argc != 2) {
-    std::cout << "Invalid input: Please only add non-negative numerical values"
+  if (argc != 3) {
+    std::cout << "Invalid input: Please only add valid and non-negative "
+                 "numerical values"
               << '\n';
     return EXIT_FAILURE;
   }
