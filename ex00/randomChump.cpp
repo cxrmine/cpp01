@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 #include <iostream>
 #include <string>
 
@@ -18,4 +19,7 @@ void randomChump(std::string name) {
     std::cout << "Error: please use a valid name for the zombie" << '\n';
     return;
   }
+
+  Zombie *zombie = new Zombie(name);
+  zombie->announce();
 }
