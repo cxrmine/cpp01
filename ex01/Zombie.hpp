@@ -24,7 +24,7 @@ typedef enum e_args {
 
 class Zombie {
 public:
-  Zombie() = default;
+  Zombie();
   Zombie(std::string name);
   ~Zombie();
 
