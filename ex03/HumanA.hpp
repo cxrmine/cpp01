@@ -18,6 +18,7 @@ public:
 	HumanA();
 	~HumanA();
 
+	void attack();
 private:
 	Weapon* weapon;
 	std::string name;
