@@ -28,4 +28,6 @@ int main() {
   kyllian->setWeapon(second_weapon);
   kyllian->attack();
   second_weapon->setType("Football");
+  delete kyllian;
+  delete second_weapon;
 }
