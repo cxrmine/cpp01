@@ -19,3 +19,5 @@ HumanA::HumanA(std::string name, Weapon *weapon) : name(name), weapon(weapon) {
   if (name.empty())
     return;
 }
+
+HumanA::~HumanA() { return; }
