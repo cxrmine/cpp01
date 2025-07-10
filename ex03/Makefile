@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=bin/pointersforlife
+NAME=bin/peacewasneveranoption
 SRC=main.cpp \
 	Weapon.cpp \
 	HumanA.cpp \
