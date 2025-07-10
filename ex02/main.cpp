@@ -20,8 +20,8 @@ int main() {
   std::string &stringREF = *stringPTR;
 
   std::cout << "Memory address of string variables: " << &s << '\n';
-  std::cout << "Memory address held by stringPTR: " << &stringPTR << '\n';
-  std::cout << "Memory address helf by stringREF" << stringREF << '\n';
+  std::cout << "Memory address held by stringPTR: " << stringPTR << '\n';
+  std::cout << "Memory address helf by stringREF: " << &stringREF << "\n\n";
 
   std::cout << "Value of the string variable: " << s << '\n';
   std::cout << "Value pointed by stringPTR: " << *stringPTR << '\n';
