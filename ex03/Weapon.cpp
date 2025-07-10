@@ -18,3 +18,5 @@ Weapon::Weapon(std::string type) : type(type) {
   if (type.empty())
     return;
 }
+
+Weapon::~Weapon() { return; }
