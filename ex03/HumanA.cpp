@@ -26,5 +26,5 @@ HumanA::~HumanA() { return; }
 
 void HumanA::attack() {
   std::cout << HumanA::name << " attacks with their weapon "
-            << HumanA::weapon->getType();
+            << HumanA::weapon->getType() << '\n';
 }

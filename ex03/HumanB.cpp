@@ -32,7 +32,7 @@ void HumanB::attack() {
   }
 
   std::cout << HumanB::name << " attacks with their "
-            << HumanB::weapon->getType();
+            << HumanB::weapon->getType() << '\n';
 }
 
 void HumanB::setWeapon(Weapon *weapon) {
