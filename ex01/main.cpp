@@ -16,8 +16,8 @@
 
 int main(int argc, char *argv[]) {
   if (argc != 3) {
-    std::cout << "Invalid input: Please only add valid "
-                 "numerical values"
+    std::cout << "USAGE:\n\t"
+                 "./bin/zombiehorde [integer (1 - 10000)] [name]"
               << '\n';
     return EXIT_FAILURE;
   }
