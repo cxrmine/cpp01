@@ -20,3 +20,8 @@ Weapon::Weapon(std::string type) : type(type) {
 }
 
 Weapon::~Weapon() { return; }
+
+void Weapon::setType(std::string type) {
+  Weapon::type = type;
+  return;
+}
