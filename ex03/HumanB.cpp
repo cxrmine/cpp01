@@ -20,6 +20,8 @@ HumanB::HumanB(std::string name) : name(name) {
     return;
 }
 
+HumanB::~HumanB() { return; }
+
 void HumanB::attack() {
   if (HumanB::weapon == NULL) {
     std::cout << HumanB::name
