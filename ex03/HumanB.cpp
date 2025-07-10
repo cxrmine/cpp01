@@ -18,6 +18,7 @@
 HumanB::HumanB(std::string name) : name(name) {
   if (name.empty())
     return;
+  HumanB::weapon = NULL;
 }
 
 HumanB::~HumanB() { return; }
