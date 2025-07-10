@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=bin/zombiehorde
+NAME=bin/pointersforlife
 SRC=main.cpp \
 
 COMPILER=c++
