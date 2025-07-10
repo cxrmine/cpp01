@@ -12,6 +12,9 @@
 
 NAME=bin/pointersforlife
 SRC=main.cpp \
+	Weapon.cpp \
+	HumanA.cpp \
+	HumanB.cpp \
 
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98
