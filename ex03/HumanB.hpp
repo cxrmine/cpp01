@@ -21,6 +21,7 @@ public:
   HumanB(std::string name);
   ~HumanB();
 
+  void attack();
 private:
   Weapon *weapon = NULL;
   std::string name;
