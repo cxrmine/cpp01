@@ -24,7 +24,7 @@ public:
   void attack();
   void setWeapon(Weapon *weapon);
 private:
-  Weapon *weapon = NULL;
+  Weapon *weapon;
   std::string name;
 };
 
