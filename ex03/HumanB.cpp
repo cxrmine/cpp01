@@ -19,3 +19,16 @@ HumanB::HumanB(std::string name) : name(name) {
   if (name.empty())
     return;
 }
+
+void HumanB::attack() {
+  if (HumanB::weapon == NULL) {
+    std::cout << HumanB::name
+              << " tried to attack. "
+                 "Unfortunately, they don't have a weapon..."
+              << '\n';
+    return;
+  }
+
+  std::cout << HumanB::name << " attacks with their "
+            << HumanB::weapon->getType();
+}
