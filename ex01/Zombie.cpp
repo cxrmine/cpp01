@@ -20,6 +20,8 @@ Zombie::Zombie(std::string name) : name(name) {
   }
 }
 
+Zombie::Zombie() { return; }
+
 Zombie::~Zombie() {
   std::cout << "[DEBUG] Zombie \"" << Zombie::name
             << "\" has died (destroyed in c++ terms)"
