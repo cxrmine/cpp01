@@ -18,11 +18,11 @@
 
 class HumanB {
 public:
-  HumanB();
+  HumanB(std::string name);
   ~HumanB();
 
 private:
-  Weapon weapon = NULL;
+  Weapon weapon;
   std::string name;
 };
 
