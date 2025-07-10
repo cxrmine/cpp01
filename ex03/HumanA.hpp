@@ -9,6 +9,8 @@
 /*   Updated: 2025/07/10 13:03:46 by tmalkawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
 #include <string>
 #include "Weapon.hpp"
@@ -23,3 +25,5 @@ private:
 	Weapon* weapon;
 	std::string name;
 };
+
+#endif // !HUMANA_HPP
