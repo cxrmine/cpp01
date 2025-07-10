@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 #include <cstdlib>
 #include <iostream>
 
@@ -21,5 +22,8 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
-  return 0;
+  Zombie *zombie = zombieHorde(atoi(argv[ZOMBIE_QUANTITY]), argv[ZOMBIE_NAME]);
+  delete[] zombie;
+
+  return EXIT_SUCCESS;
 }
