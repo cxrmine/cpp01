@@ -22,7 +22,7 @@ public:
   ~HumanB();
 
 private:
-  Weapon weapon;
+  Weapon *weapon = NULL;
   std::string name;
 };
 

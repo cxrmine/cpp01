@@ -22,7 +22,7 @@ public:
 
 	void attack();
 private:
-	Weapon weapon;
+	Weapon *weapon = NULL;
 	std::string name;
 };
 
