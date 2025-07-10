@@ -16,7 +16,7 @@
 #include <string>
 
 HumanA::HumanA(std::string name, Weapon *weapon) : name(name) {
-  if (name.empty())
+  if (name.empty() || weapon == NULL)
     return;
   HumanA::weapon = weapon;
   return;
