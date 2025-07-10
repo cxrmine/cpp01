@@ -25,3 +25,5 @@ void Weapon::setType(std::string type) {
   Weapon::type = type;
   return;
 }
+
+std::string Weapon::getType() { return Weapon::type; }
