@@ -32,3 +32,10 @@ void HumanB::attack() {
   std::cout << HumanB::name << " attacks with their "
             << HumanB::weapon->getType();
 }
+
+void HumanB::setWeapon(Weapon *weapon) {
+  if (weapon == NULL)
+    return;
+  HumanB::weapon = weapon;
+  return;
+}
