@@ -10,8 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
 #include "Weapon.hpp"
 int main() {
   Weapon *first_weapon = new Weapon("comically large blade");
+  HumanA *walid = new HumanA("walid", first_weapon);
+  walid->attack();
+  first_weapon->setType("comically large staff");
+  walid->attack();
+  delete walid;
+  delete first_weapon;
+
   return 0;
 }
