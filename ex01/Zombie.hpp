@@ -16,11 +16,8 @@
 #include <string>
 
 #define MAX_ALLOCATE_ZOMBIES 10000
-
-typedef enum e_args {
-	ZOMBIE_QUANTITY,
-	ZOMBIE_NAME,
-} t_args;
+#define ZOMBIE_QUANTITY 1
+#define ZOMBIE_NAME 2
 
 class Zombie {
 public:
