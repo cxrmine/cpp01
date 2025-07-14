@@ -10,3 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <string>
+
+class StreamEditor {
+public:
+	StreamEditor();
+	~StreamEditor();
+	
+	std::string getFileContent(std::string fileName);
+	void setFileContent(std::string fileName);
+private:
+	std::string lines;
+	std::string outputFile;
+	std::string inputFile;
+};
+
+StreamEditor::StreamEditor() {
+}
+
+StreamEditor::~StreamEditor() {
+}
