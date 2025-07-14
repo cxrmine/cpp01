@@ -19,3 +19,5 @@ StreamEditor::StreamEditor(std::string outputFile, std::string inputFile) {
   StreamEditor::inputFile = new std::fstream(inputFile, std::ios::in);
   return;
 }
+
+StreamEditor::~StreamEditor() { return; }
