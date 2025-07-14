@@ -25,9 +25,3 @@ private:
 	std::string outputFile;
 	std::string inputFile;
 };
-
-StreamEditor::StreamEditor() {
-}
-
-StreamEditor::~StreamEditor() {
-}
