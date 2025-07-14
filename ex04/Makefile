@@ -12,9 +12,7 @@
 
 NAME=bin/peacewasneveranoption
 SRC=main.cpp \
-	Weapon.cpp \
-	HumanA.cpp \
-	HumanB.cpp \
+	StreamEditor.cpp \
 
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98
