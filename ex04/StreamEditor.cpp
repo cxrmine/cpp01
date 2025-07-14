@@ -15,9 +15,21 @@
 #include <iostream>
 
 StreamEditor::StreamEditor(std::string outputFile, std::string inputFile) {
-  StreamEditor::outputFile = new std::fstream(outputFile, std::ios::out);
-  StreamEditor::inputFile = new std::fstream(inputFile, std::ios::in);
+  StreamEditor::outputFile = outputFile;
+  StreamEditor::inputFile = inputFile;
   return;
 }
 
 StreamEditor::~StreamEditor() { return; }
+
+std::string StreamEditor::getFileContent() {
+  if (!fs.is_open()) {
+    std::cerr << "Error: unable to open file." << '\n';
+  }
+
+  fs.open(StreamEditor::outputFile, std::ios::out);
+  fs >> lines;
+  fs.close();
+
+  return StreamEditor::lines;
+}

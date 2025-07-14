@@ -19,11 +19,12 @@ public:
   StreamEditor(std::string outputFile, std::string inputFile);
   ~StreamEditor();
 
-  std::string getFileContent(std::string fileName);
+  std::string getFileContent();
   void setFileContent(std::string fileName);
 
 private:
-  std::string lines;
-  std::fstream *outputFile;
-  std::fstream *inputFile;
+  std::string	lines;
+  std::string	outputFile;
+  std::string	inputFile;
+  std::fstream	fs;
 };
