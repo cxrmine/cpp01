@@ -15,7 +15,7 @@
 
 class StreamEditor {
 public:
-	StreamEditor();
+	StreamEditor(std::string outputFile, std::string inputFile);
 	~StreamEditor();
 	
 	std::string getFileContent(std::string fileName);
