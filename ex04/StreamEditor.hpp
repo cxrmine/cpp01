@@ -15,13 +15,14 @@
 
 class StreamEditor {
 public:
-	StreamEditor(std::string outputFile, std::string inputFile);
-	~StreamEditor();
-	
-	std::string getFileContent(std::string fileName);
-	void setFileContent(std::string fileName);
+  StreamEditor(std::string outputFile, std::string inputFile);
+  ~StreamEditor();
+
+  std::string getFileContent(std::string fileName);
+  void setFileContent(std::string fileName);
+
 private:
-	std::string lines;
-	std::string outputFile;
-	std::string inputFile;
+  std::string lines;
+  std::string outputFile;
+  std::string inputFile;
 };
