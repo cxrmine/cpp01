@@ -10,20 +10,24 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=bin/megaphone
-MAIN=megaphone.cpp
+NAME=bin/peacewasneveranoption
+SRC=main.cpp \
+	Weapon.cpp \
+	HumanA.cpp \
+	HumanB.cpp \
+
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98
-MAIN_OBJECT=$(addprefix obj/, $(patsubst %.cpp, %.o, $(MAIN)))
+OBJECTS=$(addprefix obj/, $(patsubst %.cpp, %.o, $(SRC)))
 
 all: $(NAME)
 
-$(NAME): $(MAIN_OBJECT)
-	$(COMPILER) $(COMPILER_ARGS) $(MAIN_OBJECT) -o $@
+$(NAME): $(OBJECTS)
+	$(COMPILER) $(COMPILER_ARGS) $(MAIN) $(OBJECTS) -o $@
 
 obj/%.o: %.cpp
 	@mkdir -p $(dir $(NAME))
-	@mkdir -p $(dir $(MAIN_OBJECT))
+	@mkdir -p $(dir $(OBJECTS))
 	$(COMPILER) $(COMPILER_ARGS) -c $< -o $@
 
 clean:
