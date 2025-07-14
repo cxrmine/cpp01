@@ -11,5 +11,11 @@
 /* ************************************************************************** */
 
 #include "StreamEditor.hpp"
+#include <fstream>
+#include <iostream>
 
-StreamEditor::StreamEditor()
+StreamEditor::StreamEditor(std::string outputFile, std::string inputFile) {
+  StreamEditor::outputFile = new std::fstream(outputFile, std::ios::out);
+  StreamEditor::inputFile = new std::fstream(inputFile, std::ios::in);
+  return;
+}

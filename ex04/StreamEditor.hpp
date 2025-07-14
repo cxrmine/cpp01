@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 class StreamEditor {
 public:
@@ -23,6 +24,6 @@ public:
 
 private:
   std::string lines;
-  std::string outputFile;
-  std::string inputFile;
+  std::fstream *outputFile;
+  std::fstream *inputFile;
 };
