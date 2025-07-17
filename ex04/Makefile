@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=bin/peacewasneveranoption
+NAME=bin/sedisforlosers
 SRC=main.cpp \
 	StreamEditor.cpp \
 
