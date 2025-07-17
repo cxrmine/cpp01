@@ -11,8 +11,14 @@
 /* ************************************************************************** */
 
 #include "StreamEditor.hpp"
+#include <iostream>
+#include <string>
 
-int main(int argc, char *argv[]) {
-  StreamEditor *sed = new StreamEditor();
+int main() {
+  std::string fileName = "sedisforlosers";
+  std::string fileContent;
+  StreamEditor *sed = new StreamEditor(fileName, fileName + ".replace");
+  fileContent = sed->getFileContent();
+  std::cout << fileContent << '\n';
   return 1;
 }
