@@ -14,11 +14,21 @@
 #include <iostream>
 #include <string>
 
-int main() {
+int main(int ac, char **av) {
+  if (ac != MAX_ARGS_NUMBER) {
+    std::cerr << "USAGE:\n\t"
+              << "./bin/sedisforlosers [file] [<string to replace>] [<string "
+                 "you want to replace>]"
+              << '\n';
+    return 1;
+  }
+
   std::string fileContent;
-  StreamEditor *sed =
-      new StreamEditor("sedisforlosers", "sedisforlosers.replace");
+  StreamEditor *sed = new StreamEditor(av[FILENAME], av[STRING_FOR_CHANGE],
+                                       av[STRING_TO_CHANGE]);
   fileContent = sed->getFileContent();
+  if (fileContent == "Error")
+    return 1;
   std::cout << fileContent << '\n';
-  return 1;
+  return 0;
 }
