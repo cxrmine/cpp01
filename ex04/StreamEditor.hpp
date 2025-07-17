@@ -10,19 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef STREAM_EDITOR_HPP
+#define STREAM_EDITOR_HPP
+
 #include <fstream>
 #include <string>
 
+#define MAX_ARGS_NUMBER 4
+#define FILENAME 1
+#define STRING_TO_CHANGE 2
+#define STRING_FOR_CHANGE 3
+
 class StreamEditor {
 public:
-  StreamEditor(const char *outputFile, const char *inputFile);
+  StreamEditor(const char *inputFile, const char *s1, const char *s2);
   ~StreamEditor();
 
   std::string getFileContent();
   void setFileContent(std::string fileName);
 
-private:
-  std::string lines;
   const char *outputFile;
+private:
   const char *inputFile;
+  const char *s1;
+  const char *s2;
+  std::string lines;
 };
+
+#endif
