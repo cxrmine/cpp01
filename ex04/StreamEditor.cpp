@@ -42,8 +42,6 @@ std::string tm_replace(std::size_t index, std::size_t len, std::string &s1,
   if (s1[0] == '\0' || s2[0] == '\0')
     return s1;
 
-  std::cout << index << '\n';
-  std::cout << len << '\n';
   for (std::size_t j = 0; j < len; j++) {
     s1[index + j] = s2[j];
   }
@@ -89,9 +87,10 @@ void StreamEditor::getFileContent() {
   }
 
   while (ifs.good() && std::getline(ifs, StreamEditor::lines)) {
+    std::string res = "";
     line = StreamEditor::lines;
-    StreamEditor::changePattern(line, StreamEditor::s1, StreamEditor::s2);
-    ofs << line << '\n';
+    res = StreamEditor::changePattern(line, StreamEditor::s1, StreamEditor::s2);
+    ofs << res << '\n';
   }
 
   ifs.close();
