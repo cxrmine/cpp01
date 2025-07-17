@@ -12,8 +12,10 @@
 
 #include "StreamEditor.hpp"
 #include <algorithm>
+#include <cstddef>
 #include <fstream>
 #include <iostream>
+#include <iterator>
 #include <string>
 
 StreamEditor::StreamEditor(const char *inputFile, const char *s1,
@@ -25,6 +27,43 @@ StreamEditor::StreamEditor(const char *inputFile, const char *s1,
 }
 
 StreamEditor::~StreamEditor() { return; }
+
+std::size_t tm_strlen(const char *s) {
+  std::size_t i = 0;
+
+  if (s == NULL)
+    return 0;
+  if (s[0] == '\0')
+    return 0;
+  while (s[i])
+    i++;
+  return (i);
+}
+
+std::string StreamEditor::changePattern(std::string line, const char *s1,
+                                        const char *s2) {
+  std::size_t counter = 0;
+  bool changeTrigger = false;
+
+  if (s1 == NULL || s2 == NULL)
+    return line;
+  if (line.empty())
+    return line;
+  if (s1[0] == '\0' || s2[0] == '\0')
+    return line;
+
+  std::size_t s1_len = tm_strlen(s1);
+  std::size_t s2_len = tm_strlen(s2);
+
+  for (std::string::iterator it = line.begin(), end = line.end(); it != end;
+       ++it) {
+    char c = *it;
+    for (std::size_t i = 0; i < s1_len; i++) {
+      if (s1[i] == c)
+        counter++;
+    }
+  }
+}
 
 void StreamEditor::getFileContent() {
   std::fstream ifs(StreamEditor::inputFile, std::ios::in);

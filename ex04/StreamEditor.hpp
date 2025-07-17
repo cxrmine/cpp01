@@ -27,10 +27,12 @@ public:
   ~StreamEditor();
 
   void getFileContent();
-  void setFileContent(std::string fileName);
 
   const char *outputFile;
+
 private:
+  std::string changePattern(std::string line, const char *s1, const char *s2);
+
   const char *inputFile;
   const char *s1;
   const char *s2;
