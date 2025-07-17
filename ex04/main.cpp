@@ -15,9 +15,9 @@
 #include <string>
 
 int main() {
-  std::string fileName = "sedisforlosers";
   std::string fileContent;
-  StreamEditor *sed = new StreamEditor(fileName, fileName + ".replace");
+  StreamEditor *sed =
+      new StreamEditor("sedisforlosers", "sedisforlosers.replace");
   fileContent = sed->getFileContent();
   std::cout << fileContent << '\n';
   return 1;

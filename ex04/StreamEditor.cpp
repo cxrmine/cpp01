@@ -13,23 +13,28 @@
 #include "StreamEditor.hpp"
 #include <fstream>
 #include <iostream>
+#include <string>
 
-StreamEditor::StreamEditor(std::string outputFile, std::string inputFile) {
-  StreamEditor::outputFile = outputFile;
+StreamEditor::StreamEditor(const char *outputFile, const char *inputFile) {
   StreamEditor::inputFile = inputFile;
+  StreamEditor::outputFile = outputFile;
   return;
 }
 
 StreamEditor::~StreamEditor() { return; }
 
 std::string StreamEditor::getFileContent() {
-  if (!StreamEditor::fs.is_open()) {
+  std::ifstream ifs(StreamEditor::inputFile);
+
+  if (!ifs.is_open()) {
     std::cerr << "Error: unable to open file." << '\n';
+    return NULL;
   }
 
-  StreamEditor::fs.open(StreamEditor::outputFile, std::ios::out);
-  StreamEditor::fs >> lines;
-  StreamEditor::fs.close();
+  ifs.open(StreamEditor::inputFile, std::ios::out);
+  while (std::getline(ifs, StreamEditor::lines, '\n'))
+    ;
 
+  ifs.close();
   return StreamEditor::lines;
 }

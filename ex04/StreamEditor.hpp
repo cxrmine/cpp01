@@ -10,20 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <fstream>
+#include <string>
 
 class StreamEditor {
 public:
-  StreamEditor(std::string outputFile, std::string inputFile);
+  StreamEditor(const char *outputFile, const char *inputFile);
   ~StreamEditor();
 
   std::string getFileContent();
   void setFileContent(std::string fileName);
 
 private:
-  std::string	lines;
-  std::string	outputFile;
-  std::string	inputFile;
-  std::fstream	fs;
+  std::string lines;
+  const char *outputFile;
+  const char *inputFile;
 };
