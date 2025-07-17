@@ -23,12 +23,8 @@ int main(int ac, char **av) {
     return 1;
   }
 
-  std::string fileContent;
   StreamEditor *sed = new StreamEditor(av[FILENAME], av[STRING_FOR_CHANGE],
                                        av[STRING_TO_CHANGE]);
-  fileContent = sed->getFileContent();
-  if (fileContent == "Error")
-    return 1;
-  std::cout << fileContent << '\n';
+  sed->getFileContent();
   return 0;
 }

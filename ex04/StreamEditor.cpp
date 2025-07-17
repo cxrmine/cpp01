@@ -26,20 +26,22 @@ StreamEditor::StreamEditor(const char *inputFile, const char *s1,
 
 StreamEditor::~StreamEditor() { return; }
 
-std::string StreamEditor::getFileContent() {
+void StreamEditor::getFileContent() {
   std::fstream ifs(StreamEditor::inputFile, std::ios::in);
   std::fstream ofs(StreamEditor::outputFile, std::ios::out);
+  std::string line = "";
 
   if (!ifs.is_open() || !ofs.is_open()) {
     std::cerr << "Error: unable to open file." << '\n';
-    return "Error";
+    return;
   }
 
   while (ifs.good() && std::getline(ifs, StreamEditor::lines)) {
+    line = StreamEditor::lines;
+
     ofs << StreamEditor::lines << '\n';
   }
 
   ifs.close();
   ofs.close();
-  return StreamEditor::lines;
 }

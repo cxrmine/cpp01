@@ -26,7 +26,7 @@ public:
   StreamEditor(const char *inputFile, const char *s1, const char *s2);
   ~StreamEditor();
 
-  std::string getFileContent();
+  void getFileContent();
   void setFileContent(std::string fileName);
 
   const char *outputFile;
