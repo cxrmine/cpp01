@@ -23,13 +23,13 @@ StreamEditor::StreamEditor(std::string outputFile, std::string inputFile) {
 StreamEditor::~StreamEditor() { return; }
 
 std::string StreamEditor::getFileContent() {
-  if (!fs.is_open()) {
+  if (!StreamEditor::fs.is_open()) {
     std::cerr << "Error: unable to open file." << '\n';
   }
 
-  fs.open(StreamEditor::outputFile, std::ios::out);
-  fs >> lines;
-  fs.close();
+  StreamEditor::fs.open(StreamEditor::outputFile, std::ios::out);
+  StreamEditor::fs >> lines;
+  StreamEditor::fs.close();
 
   return StreamEditor::lines;
 }
