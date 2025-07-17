@@ -23,19 +23,19 @@
 
 class StreamEditor {
 public:
-  StreamEditor(const char *inputFile, const char *s1, const char *s2);
+  StreamEditor(const char *inputFile);
   ~StreamEditor();
 
   void getFileContent();
 
   const char *outputFile;
+  char *s1;
+  char *s2;
 
 private:
   std::string changePattern(std::string line, const char *s1, const char *s2);
 
   const char *inputFile;
-  const char *s1;
-  const char *s2;
   std::string lines;
 };
 

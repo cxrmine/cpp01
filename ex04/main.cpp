@@ -23,8 +23,10 @@ int main(int ac, char **av) {
     return 1;
   }
 
-  StreamEditor *sed = new StreamEditor(av[FILENAME], av[STRING_FOR_CHANGE],
-                                       av[STRING_TO_CHANGE]);
+  StreamEditor *sed = new StreamEditor(av[FILENAME]);
+  sed->s1 = av[STRING_TO_CHANGE];
+  sed->s2 = av[STRING_FOR_CHANGE];
   sed->getFileContent();
+  delete sed;
   return 0;
 }
