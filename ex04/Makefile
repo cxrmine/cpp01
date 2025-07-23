@@ -15,7 +15,7 @@ SRC=main.cpp \
 	StreamEditor.cpp \
 
 COMPILER=c++
-COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98
+COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98 -g3
 OBJECTS=$(addprefix obj/, $(patsubst %.cpp, %.o, $(SRC)))
 
 all: $(NAME)
@@ -29,7 +29,7 @@ obj/%.o: %.cpp
 	$(COMPILER) $(COMPILER_ARGS) -c $< -o $@
 
 clean:
-	rm -rf $(dir $(MAIN_OBJECT))
+	rm -rf $(OBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
