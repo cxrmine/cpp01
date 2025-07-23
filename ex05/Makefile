@@ -12,6 +12,7 @@
 
 NAME=bin/sedisforlosers
 SRC=main.cpp \
+	Harl.cpp \
 
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98 -g3
