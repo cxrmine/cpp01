@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "StreamEditor.hpp"
+#include <cstring>
 #include <iostream>
 #include <string>
 
@@ -26,6 +27,12 @@ int main(int ac, char **av) {
   StreamEditor sed(av[FILENAME]);
   sed.s1 = av[STRING_TO_CHANGE];
   sed.s2 = av[STRING_FOR_CHANGE];
+
+  if (strcmp(sed.s1, sed.s2) == 0) {
+    std::cout << "Error: you cannot change a substring into itself..." << '\n';
+    return 0;
+  }
+
   sed.getFileContent();
   return 0;
 }

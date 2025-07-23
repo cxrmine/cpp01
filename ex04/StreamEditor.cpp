@@ -16,6 +16,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <strings.h>
 
 StreamEditor::StreamEditor(const char *inputFile) : inputFile(inputFile) {
   return;
@@ -35,8 +36,7 @@ std::size_t tm_strlen(const char *s) {
   return (i);
 }
 
-std::string tm_replace(std::size_t index, std::size_t len, std::string &s1,
-                       const char *s2) {
+char *tm_replace(std::size_t index, std::size_t len, char *s1, const char *s2) {
   if (len == 0)
     return s1;
   if (s1[0] == '\0' || s2[0] == '\0')
@@ -51,23 +51,30 @@ std::string tm_replace(std::size_t index, std::size_t len, std::string &s1,
 
 std::string StreamEditor::changePattern(std::string line, const char *s1,
                                         const char *s2) {
-  std::size_t s1_len = tm_strlen(s1);
+  std::size_t s2_len = tm_strlen(s2);
+  char tmp[1000];
+  char *res = NULL;
 
-  if (s1 == NULL || s2 == NULL)
-    return line;
-  if (line.empty())
-    return line;
-  if (s1[0] == '\0' || s2[0] == '\0')
-    return line;
+  bzero(tmp, sizeof(tmp));
+  line.copy(tmp, line.size());
+
+  std::size_t index = 0;
+  std::size_t search_pos = 0;
 
   while (true) {
-    std::size_t index = line.find(s1);
+    index = line.find(s1, search_pos);
     if (index == std::string::npos)
       break;
-    tm_replace(index, s1_len, line, s2);
+    search_pos = index + 2;
+    res = tm_replace(index, s2_len, tmp, s2);
   }
 
-  return line;
+  if (res == NULL)
+    return line;
+  std::size_t len_res = tm_strlen(res);
+  std::string theCoolerRes(res, len_res);
+  theCoolerRes = res;
+  return theCoolerRes;
 }
 
 void StreamEditor::getFileContent() {
@@ -87,9 +94,10 @@ void StreamEditor::getFileContent() {
   }
 
   while (ifs.good() && std::getline(ifs, StreamEditor::lines)) {
-    std::string res = "";
+    std::string theCoolerRes;
     line = StreamEditor::lines;
-    res = StreamEditor::changePattern(line, StreamEditor::s1, StreamEditor::s2);
-    ofs << res << '\n';
+    theCoolerRes =
+        StreamEditor::changePattern(line, StreamEditor::s1, StreamEditor::s2);
+    ofs << theCoolerRes << '\n';
   }
 }
