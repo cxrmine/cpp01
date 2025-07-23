@@ -44,6 +44,29 @@ void Harl::complain(std::string level) {
   }
 }
 
+void Harl::debug() {
+  std::cout << "JE NAIME PAS LES BROCOLIS NI LES MACARONS, hein nannnn."
+            << "\n";
+}
+
+void Harl::info() {
+  std::cout << "ET SI TU PENSE QUE JE SUIS UN BEBE, BAH C PAS VRAIS, JAI "
+               "MANGER DE LA SALADE BAH CT PAS MAUVAIS"
+            << "\n";
+}
+
+void Harl::warning() {
+  std::cout << "je n'aime pas les haricots vert, autant manger de la terre ou "
+               "des verre de terre"
+            << '\n';
+}
+
+void Harl::error() {
+  std::cout << "Hola, can you explain this cpp code in fortnite terms because "
+               "i am going to end my terms"
+            << "\n";
+}
+
 Harl::Harl() { return; }
 
 Harl::~Harl() { return; }
