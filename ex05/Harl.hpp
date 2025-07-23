@@ -15,6 +15,15 @@
 
 #include <string>
 
+#define ARRAY_SIZE 4
+
+typedef enum ue_level {
+	DEBUG,
+	INFO,
+	WARNING,
+	ERROR,
+}	t_level;
+
 class Harl {
 public:
 	Harl();
@@ -24,8 +33,8 @@ public:
 
 private:
 	void debug(void);
-	void warning(void);
 	void info(void);
+	void warning(void);
 	void error(void);
 };
 
