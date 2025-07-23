@@ -12,7 +12,7 @@
 
 #include "Harl.hpp"
 
-int main(int argc, char *argv[]) {
+int main() {
   Harl *harl = new Harl();
   harl->complain("DEBUG");
   harl->complain("INFO");

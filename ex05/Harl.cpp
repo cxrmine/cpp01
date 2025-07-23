@@ -24,6 +24,7 @@ void Harl::complain(std::string level) {
   while (i < ARRAY_SIZE) {
     if (levelList[i] == level)
       break;
+    i++;
   }
 
   switch (i) {
