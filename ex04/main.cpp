@@ -23,10 +23,9 @@ int main(int ac, char **av) {
     return 1;
   }
 
-  StreamEditor *sed = new StreamEditor(av[FILENAME]);
-  sed->s1 = av[STRING_TO_CHANGE];
-  sed->s2 = av[STRING_FOR_CHANGE];
-  sed->getFileContent();
-  delete sed;
+  StreamEditor sed(av[FILENAME]);
+  sed.s1 = av[STRING_TO_CHANGE];
+  sed.s2 = av[STRING_FOR_CHANGE];
+  sed.getFileContent();
   return 0;
 }
