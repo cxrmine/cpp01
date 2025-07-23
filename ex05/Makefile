@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=bin/sedisforlosers
+NAME=bin/harl
 SRC=main.cpp \
 	Harl.cpp \
 
