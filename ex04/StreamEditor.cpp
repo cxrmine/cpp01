@@ -51,7 +51,7 @@ std::string tm_replace(std::size_t index, std::size_t len, std::string &s1,
 
 std::string StreamEditor::changePattern(std::string line, const char *s1,
                                         const char *s2) {
-  std::size_t index = 0;
+  std::size_t s1_len = tm_strlen(s1);
 
   if (s1 == NULL || s2 == NULL)
     return line;
@@ -60,13 +60,13 @@ std::string StreamEditor::changePattern(std::string line, const char *s1,
   if (s1[0] == '\0' || s2[0] == '\0')
     return line;
 
-  std::size_t s2_len = tm_strlen(s2);
-  index = line.find(s1);
+  while (true) {
+    std::size_t index = line.find(s1);
+    if (index == std::string::npos)
+      break;
+    tm_replace(index, s1_len, line, s2);
+  }
 
-  if (index == std::string::npos)
-    return line;
-
-  tm_replace(index, s2_len, line, s2);
   return line;
 }
 
@@ -81,7 +81,7 @@ void StreamEditor::getFileContent() {
   std::fstream ofs(oFile, std::ios::out | std::fstream::trunc);
   std::string line = "";
 
-  if (!ifs.is_open()) {
+  if (!ifs.is_open() || !ofs.is_open()) {
     std::cerr << "Error: unable to open file." << '\n';
     return;
   }
@@ -92,7 +92,4 @@ void StreamEditor::getFileContent() {
     res = StreamEditor::changePattern(line, StreamEditor::s1, StreamEditor::s2);
     ofs << res << '\n';
   }
-
-  ifs.close();
-  ofs.close();
 }
