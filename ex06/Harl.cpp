@@ -20,11 +20,20 @@ void Harl::complain(std::string level) {
 
   std::size_t i = 0;
   std::string levelList[ARRAY_SIZE] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+  bool found = false;
 
   while (i < ARRAY_SIZE) {
-    if (levelList[i] == level)
+    if (levelList[i] == level) {
+      found = true;
       break;
+    }
     i++;
+  }
+
+  if (!found) {
+    std::cout << "[ Probably complaining about insignificant problems ]"
+              << "\n";
+    return;
   }
 
   switch (i) {
@@ -44,28 +53,28 @@ void Harl::complain(std::string level) {
 void Harl::debug() {
   std::cout << "[ DEBUG ]" << '\n';
   std::cout << "JE NAIME PAS LES BROCOLIS NI LES MACARONS, hein nannnn."
-            << "\n";
+            << "\n\n";
 }
 
 void Harl::info() {
   std::cout << "[ INFO ]" << '\n';
   std::cout << "ET SI TU PENSE QUE JE SUIS UN BEBE, BAH C PAS VRAIS, JAI "
                "MANGER DE LA SALADE BAH CT PAS MAUVAIS"
-            << "\n";
+            << "\n\n";
 }
 
 void Harl::warning() {
   std::cout << "[ WARNING ]" << '\n';
   std::cout << "je n'aime pas les haricots vert, autant manger de la terre ou "
                "des verre de terre"
-            << '\n';
+            << "\n\n";
 }
 
 void Harl::error() {
   std::cout << "[ ERROR ]" << '\n';
   std::cout << "Hola, can you explain this cpp code in fortnite terms because "
                "i am going to end my terms"
-            << "\n";
+            << "\n\n";
 }
 
 Harl::Harl() { return; }
